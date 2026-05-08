@@ -37,10 +37,12 @@ public class Usuari {
         llibresPrestats.remove(llibre);
     }
 
-    public void mostrarLlibresPrestats() {
+    public void llistarLlibres() {
 
         if (llibresPrestats.isEmpty()) {
+
             System.out.println("L'usuari no té llibres prestats");
+
         } else {
 
             System.out.println("Llibres prestats per " + nom + ":");
