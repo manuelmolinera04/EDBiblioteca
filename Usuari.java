@@ -4,11 +4,17 @@ import java.util.List;
 public class Usuari {
 
     private String nom;
+    private int id;
     private List<Llibre> llibresPrestats;
 
-    public Usuari(String nom) {
+    public Usuari(int id, String nom) {
+        this.id = id;
         this.nom = nom;
         this.llibresPrestats = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNom() {
@@ -19,11 +25,34 @@ public class Usuari {
         return llibresPrestats;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
     public void afegirLlibre(Llibre llibre) {
         llibresPrestats.add(llibre);
     }
 
     public void retornarLlibre(Llibre llibre) {
         llibresPrestats.remove(llibre);
+    }
+
+    public void mostrarLlibresPrestats() {
+
+        if (llibresPrestats.isEmpty()) {
+            System.out.println("L'usuari no té llibres prestats");
+        } else {
+
+            System.out.println("Llibres prestats per " + nom + ":");
+
+            for (Llibre llibre : llibresPrestats) {
+                System.out.println("- " + llibre.getTitol());
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Usuari{id=" + id + ", nom='" + nom + "', llibres prestats=" + llibresPrestats.size() + "}";
     }
 }
