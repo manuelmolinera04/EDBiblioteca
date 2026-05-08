@@ -4,9 +4,11 @@ import java.util.List;
 public class Biblioteca {
 
     private List<Llibre> llibres;
+    private List<Usuari> usuaris;
 
     public Biblioteca() {
         this.llibres = new ArrayList<>();
+        this.usuaris = new ArrayList<>();
     }
 
     public void afegirLlibre(Llibre llibre) {
@@ -15,6 +17,22 @@ public class Biblioteca {
 
     public void eliminarLlibre(Llibre llibre) {
         llibres.remove(llibre);
+    }
+
+    public void afegirUsuari(Usuari usuari) {
+        usuaris.add(usuari);
+    }
+
+    public Usuari buscarUsuari(String nom) {
+
+        for (Usuari usuari : usuaris) {
+
+            if (usuari.getNom().equalsIgnoreCase(nom)) {
+                return usuari;
+            }
+        }
+
+        return null;
     }
 
     public Llibre buscarLlibre(String titol) {
@@ -47,5 +65,9 @@ public class Biblioteca {
 
     public List<Llibre> getLlibres() {
         return llibres;
+    }
+
+    public List<Usuari> getUsuaris() {
+        return usuaris;
     }
 }
