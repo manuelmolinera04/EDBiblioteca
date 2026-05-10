@@ -1,3 +1,9 @@
+/**
+ * Classe que gestiona llibres i usuaris de la biblioteca.
+ * @author Daniel
+ * @version 1.0
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +17,10 @@ public class Biblioteca {
         this.usuaris = new ArrayList<>();
     }
 
+    /**
+     * Afegeix un llibre a la biblioteca.
+     * @param llibre llibre a afegir
+     */
     public void afegirLlibre(Llibre llibre) {
         llibres.add(llibre);
     }
@@ -19,10 +29,19 @@ public class Biblioteca {
         llibres.remove(llibre);
     }
 
+    /**
+     * Afegeix un usuari a la biblioteca.
+     * @param usuari usuari a afegir
+     */
     public void afegirUsuari(Usuari usuari) {
         usuaris.add(usuari);
     }
 
+    /**
+     * Cerca un usuari pel nom.
+     * @param nom nom de l'usuari
+     * @return usuari trobat o null
+     */
     public Usuari buscarUsuari(String nom) {
 
         for (Usuari usuari : usuaris) {
@@ -35,6 +54,11 @@ public class Biblioteca {
         return null;
     }
 
+    /**
+     * Cerca un llibre pel títol.
+     * @param titol títol del llibre
+     * @return llibre trobat o null
+     */
     public Llibre buscarLlibre(String titol) {
 
         for (Llibre llibre : llibres) {
