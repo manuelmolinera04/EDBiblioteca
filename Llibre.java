@@ -1,3 +1,9 @@
+/**
+ * Classe que representa un llibre.
+ * @author Cristian
+ * @version 1.0
+ */
+
 public class Llibre {
 
     private String titol;
@@ -22,6 +28,9 @@ public class Llibre {
         return prestat;
     }
 
+    /**
+     * Marca el llibre com prestat.
+     */
     public void prestar() {
         prestat = true;
     }
@@ -32,6 +41,11 @@ public class Llibre {
 
     @Override
     public String toString() {
-        return titol + " de " + autor + (prestat ? " (En préstec)" : " (Disponible)");
+
+        if (prestat) {
+            return titol + " - " + autor + " (Prestat)";
+        } else {
+            return titol + " - " + autor + " (Disponible)";
+        }
     }
 }
