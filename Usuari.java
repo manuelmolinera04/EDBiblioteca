@@ -1,3 +1,9 @@
+/**
+ * Classe que representa un usuari de la biblioteca.
+ * @author Daniel
+ * @version 1.0
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +35,10 @@ public class Usuari {
         this.nom = nom;
     }
 
+    /**
+     * Afegeix un llibre prestat a l'usuari.
+     * @param llibre llibre prestat
+     */
     public void afegirLlibre(Llibre llibre) {
         llibresPrestats.add(llibre);
     }
