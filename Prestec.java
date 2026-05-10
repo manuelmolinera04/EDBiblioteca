@@ -1,3 +1,9 @@
+/**
+ * Classe que representa un préstec.
+ * @author Cristian
+ * @version 1.0
+ */
+
 import java.time.LocalDate;
 
 public class Prestec {
@@ -22,7 +28,20 @@ public class Prestec {
         return llibre;
     }
 
+    public LocalDate getDataPrestec() {
+        return dataPrestec;
+    }
+
+    /**
+     * Retorna la data de devolució del préstec.
+     * @return data de retorn
+     */
     public LocalDate getDataRetorn() {
         return dataRetorn;
+    }
+
+    @Override
+    public String toString() {
+        return "Prestec{usuari=" + usuari.getNom() + ", llibre=" + llibre.getTitol() + ", retorn=" + dataRetorn + "}";
     }
 }
