@@ -1,3 +1,9 @@
+/**
+ * Classe principal del programa.
+ * @author Manel
+ * @version 1.0
+ */
+
 import java.util.Scanner;
 
 public class Main {
